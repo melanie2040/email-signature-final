@@ -44,68 +44,159 @@
 </head>
 
 <body lang=EN-SG link="#467886" vlink="#96607D" style='word-wrap:break-word'>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 15px;">
+        <div
+            style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); font-family: Arial, Helvetica, sans-serif;">
 
-    <div class="form-group">
-        <label for="nameInput">Enter your first name:</label>
-        <input type="text" id="nameInput" placeholder="Enter first name here">
+            <!-- First Name Input -->
+            <div style="margin-bottom: 5px;">
+                <label for="nameInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter
+                    your first name:</label>
+                <input type="text" id="nameInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+                <button onclick="updateName()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    First Name</button>
+            </div>
 
-        <!-- Button to update the displayed name -->
-        <button onclick="updateName()">Update First Name</button>
+            <!-- Last Name Input -->
+            <div style="margin-bottom: 5px;">
+                <label for="lastNameInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter your last
+                    name:</label>
+                <input type="text" id="lastNameInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+                <button onclick="updateLastName()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Last Name</button>
+            </div>
+
+            <!-- Second Name Input -->
+            <div style="margin-bottom: 5px;">
+                <label for="secondNameInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter any second
+                    given
+                    name (If any):</label>
+                <input type="text" id="secondNameInput" placeholder="Simply press update if none"
+                    style="width: 40%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+                <button onclick="updateSecondName()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Second Given Name</button>
+            </div>
+
+            <!-- Role Input -->
+            <div style="margin-bottom: 5px;">
+                <label for="roleInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter
+                    your role:</label>
+                <input type="text" id="roleInput" 
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
+                    required>
+                <button onclick="updateRole()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Role</button>
+            </div>
+
+            <!-- Domain Input -->
+            <div style="margin-bottom: 5px;">
+                <label for="domainInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter your
+                    domain:</label>
+                <select id="domainInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
+                    required>
+                    <option value='' disabled>Select a domain</option>
+                    <option value='dC Plus'>dc Plus</option>
+                    <option value='dC Robotics'>dC Robotics</option>
+                    <option value='dC Engineering'>dC Engineering</option>
+                    <option value='dC Technologies'>dC Technologies</option>
+                </select>
+                <button onclick="updateDomain()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Domain</button>
+            </div>
+
+            <!-- Number Input -->
+            <div style="margin-bottom: 5px;">
+                <label for="numberInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter your
+                    number:</label>
+                <input type="text" id="numberInput" 
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
+                    required>
+                <button onclick="updateNumber()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Number</button>
+            </div>
+
+        </div>
+
+        <div
+            style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); font-family: Arial, Helvetica, sans-serif;">
+            <p style="color: red;">Only modify this section if you need to change company information</p>
+            <div style="margin-bottom: 5px;">
+                <label for="companyNumberInput"
+                    style="font-size: 14px; font-weight: bold; display: block; margin-bottom: 8px;">Enter new company
+                    number:</label>
+                <input type="text" id="companyNumberInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
+                    required>
+                <button onclick="updateCompanyNumber()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Company Number</button>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <label for="companyWebsiteInput"
+                    style="font-size: 14px; font-weight: bold; display: block; margin-bottom: 8px;">Enter new company website
+                    :</label>
+                <input type="text" id="companyWebsiteInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+                <button onclick="updateCompanyWebsite()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Company Website</button>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <label for="companyAddressInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter new company address
+                    :</label>
+                <input type="text" id="companyAddressInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+                <button onclick="updateCompanyAddress()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    Company Address</button>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <label for="myCountryCodeInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter new country code for my
+                    number:</label>
+                <input type="number" id="myCountryCodeInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
+                    required>
+                <button onclick="updateMyCountryCode()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    </button>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <label for="companyCountryCodeInput"
+                    style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter new country code for company
+                    number:</label>
+                <input type="number" id="companyCountryCodeInput"
+                    style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
+                    required>
+                <button onclick="updateCompanyCountryCode()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
+                    </button>
+            </div>
+
+
+
+        </div>
     </div>
-
-    <div class="form-group">
-        <label for="lastNameInput">Enter your last name:</label>
-        <input type="text" id="lastNameInput" placeholder="Enter last name here">
-
-        <!-- Button to update the displayed name -->
-        <button onclick="updateLastName()">Update Last Name</button>
-    </div>
-
-    <div class="form-group"></div>
-    <label for="secondNameInput">Enter any second given name (If any):</label>
-    <input type="text" id="secondNameInput">
-
-    <!-- Button to update the displayed name -->
-    <button onclick="updateSecondName()">Update Second Given Name</button>
-
-
-    <div class="form-group">
-
-        <label for="nameInput">Enter your role:</label>
-        <input type="text" id="roleInput" placeholder="Enter role here" required>
-
-        <!-- Button to update the displayed name -->
-        <button onclick="updateRole()">Update Role</button>
-    </div>
-
-    <div class="form-group" style="margin-bottom: 10px;">
-
-        <label for="domainInput">Enter your domain:</label>
-        <select id="domainInput" required>
-            <option value='' disabled>Select a domain</option>
-            <option value='dC Plus'>dc Plus</option>
-            <option value='dC Robotics'>dC Robotics</option>
-            <option value='dC Engineering'>dC Engineering</option>
-            <option value='dC Technologies'>dC Technologies</option>
-        </select>
-
-        <!-- Button to update the displayed name -->
-        <button onclick="updateDomain()">Update Domain</button>
-    </div>
-
-    <div class="form-group">
-
-        <label for="companyInput">Enter your number:</label>
-        <input type="number" id="numberInput" placeholder="Enter number here" required>
-
-        <!-- Button to update the displayed name -->
-        <button onclick="updateNumber()">Update Number</button>
-    </div>
-    <div>
-        <p style="font-size: 24px; color: #FF3300; margin-top: 5; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Please remember to click all update buttons before copying.</p>
-    </div>
-
-
 
     <div class="container">
         <div class=WordSection1>
@@ -180,9 +271,18 @@
                         </p>
                     </td>
                     <td width=316 style='width:236.85pt;padding:.75pt .75pt .75pt .75pt;height:20.9pt'>
-                        <p class=MsoNormal><span id="displayNumber" ,
-                                style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>Tel +65
-                                6100 5382 | Mobile +65 8262 6126</span></p>
+                        <p class=MsoNormal><span
+                                style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>Tel</span>
+                                <span id="displayCompanyCountryCode",
+                                style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>+65 </span>
+
+                                <span id="displayCompanyNumber" ,
+                                style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>6100 5382 | Mobile</span>
+                                
+                                <span id="displayMyCountryCode" ,
+                                style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>+65 </span>
+                                <span id="displayNumber" ,
+                                style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>8262 6126</span></p>
                     </td>
                 </tr>
                 <tr style='height:20.9pt'>
@@ -196,7 +296,7 @@
                         </p>
                     </td>
                     <td width=316 style='width:236.85pt;padding:.75pt .75pt .75pt .75pt; height:20.9pt'>
-                        <a href="https://www.dconstruct.co/" class=MsoNormal><span
+                        <a id="displayCompanyWebsite" href="https://www.dconstruct.co/" class=MsoNormal><span id="displayCompanyWebsiteName"
                                 style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>
                                 www.dconstruct.co</span></a>
                     </td>
@@ -212,7 +312,7 @@
                         </p>
                     </td>
                     <td width=316 style='width:236.85pt;padding:.75pt .75pt .75pt .75pt;height:20.9pt'>
-                        <p class=MsoNormal><span style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>10
+                        <p class=MsoNormal><span id="displayCompanyAddress" style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black'>10
                                 Central Exchange Green, #03-01,02 Singapore 138649</span></p>
                     </td>
 
@@ -369,7 +469,24 @@
             }
 
             // Update the display area with the new name
-            document.getElementById('displayNumber').innerText = `Tel +65 6100 5382 | Mobile +65 ${number}`;
+            document.getElementById('displayNumber').innerText = `${number}`;
+        }
+
+        function updateCompanyNumber() {
+            // Get the input value
+            var number = document.getElementById('companyNumberInput').value;
+            if (/^\d{8}$/.test(number)) {
+                // Separate the number into two groups of four
+                var formatted = number.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+                // Display the formatted number
+                number = formatted;
+            } else {
+                number = number;
+            }
+
+            // Update the display area with the new name
+            document.getElementById('displayCompanyNumber').innerText = `${number} | Mobile `;
         }
 
         function updateDomain() {
@@ -391,6 +508,31 @@
                 imgElement.src = 'data:image/png;base64,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';
                 document.getElementById('displayCompany').innerText = 'dConstruct Technologies | AI & Robotics';
             }
+        }
+
+        function updateCompanyWebsite(){
+            var newUrl = document.getElementById('companyWebsiteInput').value;
+            if(newUrl && newUrl.startsWith('http')){
+                document.getElementById('displayCompanyWebsite').href = newUrl;
+                var urlName = newUrl.slice(newUrl.indexOf('www'));
+                document.getElementById('displayCompanyWebsiteName').innerText = urlName;
+            }
+
+        }
+
+        function updateCompanyAddress(){
+            var address = document.getElementById('companyAddressInput').value;
+            document.getElementById('displayCompanyAddress').innerText = address;
+        }
+
+        function updateMyCountryCode(){
+            var cc = document.getElementById('myCountryCodeInput').value;
+            document.getElementById('displayMyCountryCode').innerText = `+${cc} `;
+        }
+
+        function updateCompanyCountryCode(){
+            var cc = document.getElementById('companyCountryCodeInput').value;
+            document.getElementById('displayCompanyCountryCode').innerText = `+${cc} `;
         }
     </script>
 
