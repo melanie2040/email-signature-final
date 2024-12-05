@@ -461,7 +461,7 @@
         function updateNumber() {
             // Get the input value
             var number = document.getElementById('numberInput').value;
-            if (/[^0-9]/.test(cc)) {
+            if (/[^0-9]/.test(number)) {
                 alert('The country code should not contain a dash or letter.');
             } else {
                 if (/^\d{8}$/.test(number)) {
