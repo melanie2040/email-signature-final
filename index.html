@@ -47,16 +47,15 @@
     <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 15px;">
         <div
             style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); font-family: Arial, Helvetica, sans-serif;">
-
+            <p style="color: green;">Please fill in this section with your details</p>
+           
             <!-- First Name Input -->
             <div style="margin-bottom: 5px;">
                 <label for="nameInput" style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter
                     your first name:</label>
                 <input type="text" id="nameInput"
                     style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
-                <button onclick="updateName()"
-                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
-                    First Name</button>
+                
             </div>
 
             <!-- Last Name Input -->
@@ -66,9 +65,7 @@
                     name:</label>
                 <input type="text" id="lastNameInput"
                     style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
-                <button onclick="updateLastName()"
-                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
-                    Last Name</button>
+                
             </div>
 
             <!-- Second Name Input -->
@@ -76,12 +73,10 @@
                 <label for="secondNameInput" style="font-size: 14px; font-weight: bold; margin-bottom: 8px;">Enter any
                     second
                     given
-                    name (If any):</label>
-                <input type="text" id="secondNameInput" placeholder="Simply press update if none"
-                    style="width: 40%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
-                <button onclick="updateSecondName()"
-                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
-                    Second Given Name</button>
+                    name:</label>
+                <input type="text" id="secondNameInput" placeholder="Simply leave blank if none"
+                    style="width: 45%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+                
             </div>
 
             <!-- Role Input -->
@@ -91,9 +86,7 @@
                 <input type="text" id="roleInput"
                     style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
                     required>
-                <button onclick="updateRole()"
-                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
-                    Role</button>
+                
             </div>
 
             <!-- Domain Input -->
@@ -109,9 +102,7 @@
                     <option value='dC Engineering'>dC Engineering</option>
                     <option value='dC Technologies'>dC Technologies</option>
                 </select>
-                <button onclick="updateDomain()"
-                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
-                    Domain</button>
+                
             </div>
 
             <!-- Number Input -->
@@ -121,9 +112,13 @@
                 <input type="text" id="numberInput"
                     style="width: 30%; padding: 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;"
                     required>
-                <button onclick="updateNumber()"
-                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update
-                    Number</button>
+                
+            </div>
+
+
+            <div style="margin-bottom: 5px;">
+                <button onclick="updateDetails()"
+                    style="display: inline-block; background-color: #4CAF50; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Update</button>
             </div>
 
         </div>
@@ -415,6 +410,14 @@
 
 
     <script>
+        function updateDetails(){
+            updateName();
+            updateLastName();
+            updateSecondName();
+            updateRole();
+            updateDomain();
+            updateNumber();
+        }
         function updateName() {
             // Get the input value
             var name = document.getElementById('nameInput').value;
@@ -445,9 +448,9 @@
         function updateRole() {
             // Get the input value
             var name = document.getElementById('roleInput').value;
+            var capitalized = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
-            // Update the display area with the new name
-            document.getElementById('displayRole').innerText = name;
+            document.getElementById('displayRole').innerText = capitalized;
         }
 
         /* function updateCompany() {
